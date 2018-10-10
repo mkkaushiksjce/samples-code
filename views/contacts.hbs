@@ -1,0 +1,27 @@
+<h2>Contacts</h2>
+<table class="table">
+  <thead class="thead-light">
+    <th scope="col">DisplayName</th>
+        <th scope="col">CompanyName</th>
+        <th scope="col">Department</th>
+        <th scope="col">Email addresses</th>
+  </thead>
+  <tbody>
+    {{#each contacts}}
+      <tr>
+        <td>{{this.displayName}}</td>
+        <td>{{this.companyName}}</td>
+        <td>{{this.department}}</td>
+        <td>
+          <ul class="list-unstyled">
+            {{#each this.emailAddresses}}
+              <li class="border p-1">
+                {{this.address}}
+              </li>
+            {{/each}}
+          </ul>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
